@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crystal's Memories</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="gallery-page">
+
+<div class="stars"></div>
+
+<div class="moon"></div>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<section class="gallery">
+
+<div class="glass-card">
+
+<h4>📸 Beautiful Memories</h4>
+
+<h1>Crystal's Gallery 💙</h1>
+
+<p class="gallery-text">
+
+Every picture tells a story.<br>
+Every smile creates a memory.<br>
+Every memory lasts forever.
+
+</p>
+
+<div class="slider">
+
+<img id="photo" src="photos/photo1.jpg" alt="Crystal">
+
+<div class="caption" id="caption">
+
+Beautiful Smile ✨
+
+</div>
+
+</div>
+
+<div class="dots">
+
+<span class="dot active"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+
+</div>
+
+<div class="buttons">
+
+<button onclick="previousPhoto()">
+
+⬅ Previous
+
+</button>
+
+<button onclick="nextPhoto()">
+
+Next ➜
+
+</button>
+
+</div>
+
+<div class="continue">
+
+<button class="nextBtn" onclick="nextPage()">
+
+Continue Journey →
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<audio autoplay loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+const photos=[
+
+"photos/photo1.jpg",
+"photos/photo2.jpg",
+"photos/photo3.jpg",
+"photos/photo4.jpg",
+"photos/photo5.jpg"
+
+];
+
+const captions=[
+
+"Beautiful Smile ✨",
+"Best Memories 💙",
+"Always Amazing 🌸",
+"Forever Young 🎂",
+"Happy Birthday Crystal 💎"
+
+];
+
+let current=0;
+
+const image=document.getElementById("photo");
+const text=document.getElementById("caption");
+const dots=document.querySelectorAll(".dot");
+
+function updateGallery(){
+
+image.style.opacity=0;
+
+setTimeout(()=>{
+
+image.src=photos[current];
+text.innerHTML=captions[current];
+
+image.style.opacity=1;
+
+dots.forEach(dot=>dot.classList.remove("active"));
+dots[current].classList.add("active");
+
+},300);
+
+}
+
+function nextPhoto(){
+
+current++;
+
+if(current>=photos.length){
+
+current=0;
+
+}
+
+updateGallery();
+
+}
+
+function previousPhoto(){
+
+current--;
+
+if(current<0){
+
+current=photos.length-1;
+
+}
+
+updateGallery();
+
+}
+
+setInterval(nextPhoto,5000);
+
+function nextPage(){
+
+document.body.classList.add("fadeOut");
+
+setTimeout(()=>{
+
+window.location="letter.html";
+
+},1200);
+
+}
+
+</script>
+
+</body>
+</html>

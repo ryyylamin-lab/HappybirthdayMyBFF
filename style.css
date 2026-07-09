@@ -1,0 +1,309 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#001d3d,#003566,#0077b6,#87CEEB);
+background-size:400% 400%;
+animation:bg 15s ease infinite;
+color:#fff;
+overflow-x:hidden;
+transition:1s;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.fadeOut{
+opacity:0;
+transform:scale(.95);
+}
+
+/* ---------- Background ---------- */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+background-image:
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(white 1px,transparent 1px);
+background-size:60px 60px;
+opacity:.4;
+animation:twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.2;}
+to{opacity:.7;}
+}
+
+.moon{
+position:fixed;
+top:60px;
+right:70px;
+width:120px;
+height:120px;
+border-radius:50%;
+background:white;
+box-shadow:0 0 40px white;
+}
+
+.cloud{
+position:fixed;
+width:220px;
+height:60px;
+background:rgba(255,255,255,.15);
+border-radius:50px;
+filter:blur(2px);
+animation:cloud 30s linear infinite;
+}
+
+.cloud1{top:120px;left:-250px;}
+.cloud2{top:240px;left:-500px;animation-delay:8s;}
+.cloud3{top:340px;left:-350px;animation-delay:14s;}
+.cloud4{top:450px;left:-450px;animation-delay:20s;}
+
+@keyframes cloud{
+from{transform:translateX(0);}
+to{transform:translateX(1700px);}
+}
+
+/* ---------- Glass Card ---------- */
+
+.glass,
+.glass-card{
+width:90%;
+max-width:850px;
+margin:80px auto;
+padding:45px;
+text-align:center;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.2);
+border-radius:25px;
+box-shadow:0 0 30px rgba(0,0,0,.3);
+animation:show 1.2s;
+}
+
+@keyframes show{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+h1{
+font-size:55px;
+margin-bottom:10px;
+}
+
+h2{
+font-size:38px;
+margin-bottom:20px;
+color:#dff6ff;
+}
+
+h4{
+font-size:20px;
+letter-spacing:3px;
+margin-bottom:15px;
+}
+
+p{
+font-size:20px;
+line-height:1.8;
+}
+
+/* ---------- Buttons ---------- */
+
+button{
+margin:15px;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:#7FDBFF;
+color:#003566;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+font-weight:bold;
+}
+
+button:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px #7FDBFF;
+}
+
+/* ---------- Gallery ---------- */
+
+.slider img{
+width:100%;
+max-width:450px;
+height:500px;
+object-fit:cover;
+border-radius:20px;
+transition:.5s;
+box-shadow:0 0 20px rgba(255,255,255,.2);
+}
+
+.caption{
+margin-top:15px;
+font-size:22px;
+}
+
+.dots{
+margin:20px;
+}
+
+.dot{
+display:inline-block;
+width:12px;
+height:12px;
+border-radius:50%;
+background:white;
+opacity:.4;
+margin:5px;
+}
+
+.dot.active{
+opacity:1;
+background:#7FDBFF;
+}
+
+/* ---------- Envelope ---------- */
+
+.envelope{
+width:320px;
+height:210px;
+margin:40px auto;
+position:relative;
+cursor:pointer;
+}
+
+.cover{
+position:absolute;
+width:100%;
+height:100%;
+background:#87CEEB;
+clip-path:polygon(0 0,100% 0,50% 60%);
+transform-origin:top;
+transition:1s;
+}
+
+.paper{
+position:absolute;
+top:20px;
+left:10px;
+width:300px;
+height:260px;
+padding:20px;
+background:white;
+color:#222;
+border-radius:12px;
+overflow:auto;
+opacity:0;
+transition:1s;
+}
+
+/* ---------- Cake ---------- */
+
+.cake{
+margin:50px auto;
+width:220px;
+position:relative;
+}
+
+.layer{
+height:50px;
+border-radius:10px;
+margin:5px;
+background:#ffb3c6;
+}
+
+.top{
+background:#ffc8dd;
+}
+
+.middle{
+background:#ffafcc;
+}
+
+.bottom{
+background:#ff8fab;
+}
+
+.icing{
+height:15px;
+background:white;
+border-radius:20px;
+margin-top:-5px;
+}
+
+.candles{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:-120px;
+margin-bottom:80px;
+}
+
+.candle{
+width:10px;
+height:60px;
+background:white;
+position:relative;
+}
+
+.flame{
+width:14px;
+height:20px;
+background:orange;
+border-radius:50%;
+position:absolute;
+top:-18px;
+left:-2px;
+animation:flicker .4s infinite alternate;
+}
+
+@keyframes flicker{
+from{transform:scale(1);}
+to{transform:scale(.8);}
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+text-align:center;
+padding:20px;
+opacity:.7;
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:768px){
+
+h1{font-size:38px;}
+h2{font-size:28px;}
+p{font-size:17px;}
+
+.glass,
+.glass-card{
+padding:25px;
+}
+
+.slider img{
+height:320px;
+}
+
+}

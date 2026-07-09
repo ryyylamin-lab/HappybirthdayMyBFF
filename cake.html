@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Cake 🎂</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="cake-page">
+
+<div class="stars"></div>
+<div class="moon"></div>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<section class="cake-section">
+
+<div class="glass-card">
+
+<h4>🎂 Make A Wish</h4>
+
+<h1>Happy Birthday Crystal 💙</h1>
+
+<p>
+
+Close your eyes...
+
+Make your biggest wish...
+
+Then blow out the candles!
+
+</p>
+
+<div class="cake">
+
+<div class="plate"></div>
+
+<div class="layer bottom"></div>
+
+<div class="layer middle"></div>
+
+<div class="layer top"></div>
+
+<div class="icing"></div>
+
+<div class="candles">
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+</div>
+
+</div>
+
+<button id="wishBtn" onclick="blowCandles()">
+
+🎉 Blow The Candles
+
+</button>
+
+<div id="wishMessage">
+
+<h2>✨ Your Wish Is On Its Way ✨</h2>
+
+<p>
+
+May every dream become reality.
+
+May happiness follow you forever.
+
+Have an unforgettable birthday!
+
+💙🎂✨
+
+</p>
+
+</div>
+
+<div class="buttons">
+
+<button onclick="backPage()">
+
+⬅ Letter
+
+</button>
+
+<button onclick="nextPage()">
+
+Final Surprise ➜
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<audio autoplay loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+function blowCandles(){
+
+document.querySelectorAll(".flame").forEach(function(f){
+
+f.style.opacity="0";
+
+f.style.transform="scale(0)";
+
+});
+
+document.getElementById("wishBtn").style.display="none";
+
+document.getElementById("wishMessage").style.display="block";
+
+confetti();
+
+}
+
+function confetti(){
+
+for(let i=0;i<250;i++){
+
+let c=document.createElement("div");
+
+c.style.position="fixed";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.top="-20px";
+
+c.style.width="8px";
+
+c.style.height="8px";
+
+c.style.borderRadius="50%";
+
+c.style.background="hsl("+Math.random()*360+",100%,60%)";
+
+c.style.pointerEvents="none";
+
+document.body.appendChild(c);
+
+let y=0;
+
+let speed=Math.random()*6+3;
+
+let rotate=Math.random()*360;
+
+let fall=setInterval(function(){
+
+y+=speed;
+
+rotate+=6;
+
+c.style.top=y+"px";
+
+c.style.transform="rotate("+rotate+"deg)";
+
+if(y>window.innerHeight){
+
+clearInterval(fall);
+
+c.remove();
+
+}
+
+},20);
+
+}
+
+}
+
+function nextPage(){
+
+document.body.classList.add("fadeOut");
+
+setTimeout(function(){
+
+window.location="final.html";
+
+},1200);
+
+}
+
+function backPage(){
+
+document.body.classList.add("fadeOut");
+
+setTimeout(function(){
+
+window.location="letter.html";
+
+},1200);
+
+}
+
+</script>
+
+</body>
+</html>

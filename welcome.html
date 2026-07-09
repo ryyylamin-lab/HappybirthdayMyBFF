@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Welcome Crystal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="welcome-page">
+
+<div class="stars"></div>
+
+<div class="moon"></div>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<section class="welcome">
+
+<div class="glass-card">
+
+<h4>✨ Welcome ✨</h4>
+
+<h1 id="title"></h1>
+
+<p class="message">
+
+Tonight is different...
+
+The stars are shining brighter.
+
+The moon is glowing beautifully.
+
+Because someone very special
+
+is celebrating today.
+
+</p>
+
+<div class="quote">
+
+"Every birthday is the beginning
+
+of another amazing adventure."
+
+</div>
+
+<div class="loading-box">
+
+<div class="loading-bar">
+
+<div class="loading-fill" id="loading"></div>
+
+</div>
+
+<p id="percent">
+
+0%
+
+</p>
+
+</div>
+
+<button onclick="nextPage()">
+
+Continue →
+
+</button>
+
+</div>
+
+</section>
+
+<audio autoplay loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+const text="Welcome Crystal 💎";
+
+let i=0;
+
+function type(){
+
+if(i<text.length){
+
+document.getElementById("title").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(type,120);
+
+}
+
+}
+
+type();
+
+let percent=0;
+
+let bar=document.getElementById("loading");
+
+let txt=document.getElementById("percent");
+
+let load=setInterval(function(){
+
+percent++;
+
+bar.style.width=percent+"%";
+
+txt.innerHTML=percent+"%";
+
+if(percent>=100){
+
+clearInterval(load);
+
+}
+
+},40);
+
+function nextPage(){
+
+document.body.classList.add("fadeOut");
+
+setTimeout(function(){
+
+window.location.href="story.html";
+
+},1500);
+
+}
+
+</script>
+
+</body>
+</html>

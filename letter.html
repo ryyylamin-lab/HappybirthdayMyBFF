@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter For Crystal 💌</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="letter-page">
+
+<div class="stars"></div>
+<div class="moon"></div>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<section class="letter-section">
+
+<div class="glass-card">
+
+<h4>💌 A Special Letter</h4>
+
+<h1>Dear Crystal 💙</h1>
+
+<div class="envelope" onclick="openLetter()">
+
+<div class="cover"></div>
+
+<div class="paper" id="paper">
+
+<h2>Happy Birthday 🎂</h2>
+
+<p id="typing"></p>
+
+</div>
+
+</div>
+
+<p class="hint">
+📩 Click the envelope to open your birthday letter.
+</p>
+
+<div id="buttons" style="display:none; margin-top:30px;">
+
+<button onclick="backPage()">
+⬅ Gallery
+</button>
+
+<button onclick="nextPage()">
+Cake 🎂 ➜
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<audio autoplay loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+let opened=false;
+
+const message=
+
+`Happy Birthday, Crystal! 💙
+
+Today is all about you.
+
+May every dream you wish for become real.
+
+May your smile always stay bright.
+
+May your life be filled with happiness,
+love, laughter and success.
+
+Never stop believing in yourself,
+because you are truly amazing.
+
+Thank you for making the world
+a brighter place.
+
+Have an unforgettable birthday.
+
+🎂💎✨
+
+With Best Wishes ❤️`;
+
+function openLetter(){
+
+if(opened) return;
+
+opened=true;
+
+document.querySelector(".cover").style.transform="rotateX(180deg)";
+
+document.querySelector(".paper").style.top="-260px";
+
+document.querySelector(".paper").style.opacity="1";
+
+typeMessage();
+
+}
+
+let i=0;
+
+function typeMessage(){
+
+if(i<message.length){
+
+document.getElementById("typing").innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(typeMessage,35);
+
+}else{
+
+document.querySelector(".hint").innerHTML="✨ Hope you loved the letter!";
+
+document.getElementById("buttons").style.display="block";
+
+}
+
+}
+
+function nextPage(){
+
+document.body.classList.add("fadeOut");
+
+setTimeout(function(){
+
+window.location="cake.html";
+
+},1200);
+
+}
+
+function backPage(){
+
+document.body.classList.add("fadeOut");
+
+setTimeout(function(){
+
+window.location="gallery.html";
+
+},1200);
+
+}
+
+</script>
+
+</body>
+</html>
