@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Story</title>
+<title>Our Story 💎</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -16,12 +14,12 @@
 <body class="story-page">
 
 <div class="stars"></div>
-
 <div class="moon"></div>
 
 <div class="cloud cloud1"></div>
 <div class="cloud cloud2"></div>
 <div class="cloud cloud3"></div>
+
 
 <section class="story">
 
@@ -32,6 +30,7 @@
 <h1 id="storyTitle"></h1>
 
 <div id="storyText" class="story-text"></div>
+
 
 <div class="timeline">
 
@@ -63,11 +62,11 @@
 
 </div>
 
+
 <div class="quote">
-
 "Every great story begins with one beautiful person."
-
 </div>
+
 
 <div class="buttons">
 
@@ -76,20 +75,20 @@
 </button>
 
 <button onclick="nextPage()">
-Next →
+Letter 💌 →
 </button>
-
 </div>
+
 
 </div>
 
 </section>
 
+
 <audio autoplay loop>
-
 <source src="music.mp3" type="audio/mpeg">
-
 </audio>
+
 
 <script>
 
@@ -97,11 +96,12 @@ const title="The Story of Crystal 💎";
 
 let titleIndex=0;
 
+
 function typeTitle(){
 
 if(titleIndex<title.length){
 
-document.getElementById("storyTitle").innerHTML+=title.charAt(titleIndex);
+document.getElementById("storyTitle").innerHTML += title.charAt(titleIndex);
 
 titleIndex++;
 
@@ -112,6 +112,8 @@ setTimeout(typeTitle,80);
 }
 
 typeTitle();
+
+
 
 const lines=[
 
@@ -129,7 +131,9 @@ const lines=[
 
 ];
 
+
 let line=0;
+
 
 function writeStory(){
 
@@ -139,19 +143,15 @@ let p=document.createElement("p");
 
 p.innerHTML=lines[line];
 
-p.style.opacity="0";
-
-p.style.marginBottom="18px";
-
 document.getElementById("storyText").appendChild(p);
 
-setTimeout(()=>{
 
-p.style.transition="1s";
+setTimeout(()=>{
 
 p.style.opacity="1";
 
 },100);
+
 
 line++;
 
@@ -161,25 +161,29 @@ setTimeout(writeStory,1800);
 
 }
 
+
 setTimeout(writeStory,1200);
+
+
 
 function nextPage(){
 
 document.body.classList.add("fadeOut");
 
-setTimeout(function(){
+setTimeout(()=>{
 
-window.location.href="gallery.html";
+window.location.href="letter.html";
 
 },1200);
 
 }
 
+
 function backPage(){
 
 document.body.classList.add("fadeOut");
 
-setTimeout(function(){
+setTimeout(()=>{
 
 window.location.href="welcome.html";
 
@@ -187,7 +191,9 @@ window.location.href="welcome.html";
 
 }
 
+
 </script>
+
 
 </body>
 </html>
