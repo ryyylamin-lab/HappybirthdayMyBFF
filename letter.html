@@ -50,7 +50,7 @@
 <div id="buttons" style="display:none; margin-top:30px;">
 
 <button onclick="backPage()">
-⬅ Gallery
+⬅ Story
 </button>
 
 <button onclick="nextPage()">
@@ -136,6 +136,19 @@ document.getElementById("buttons").style.display="block";
 
 }
 
+function nextPage(){
+
+document.body.classList.add("fadeOut");
+
+setTimeout(function(){
+
+window.location.href = "cake.html";
+
+},1200);
+
+}
+
+
 function backPage(){
 
 document.body.classList.add("fadeOut");
@@ -147,19 +160,6 @@ window.location.href="story.html";
 },1200);
 
 }
-
-function backPage(){
-
-document.body.classList.add("fadeOut");
-
-setTimeout(function(){
-
-window.location="gallery.html";
-
-},1200);
-
-}
-
 </script>
 
 </body>
